@@ -250,4 +250,10 @@ public class ClienteController implements Initializable{
 		}
 	}
 	
+	   @FXML
+	   private void editNombre(TableColumn.CellEditEvent<Client, String> event) {
+	      ClientDAO c = new ClientDAO(event.getRowValue());
+	      c.setNombre(event.getNewValue());
+	   }
+	
 }
