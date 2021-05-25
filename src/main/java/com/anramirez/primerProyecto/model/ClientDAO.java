@@ -18,14 +18,11 @@ import javafx.scene.control.Alert;
 public class ClientDAO extends Client implements IClientDAO {
 	
 
-	private final static String GETBYID = "SELECT idCliente, nombre, dni, telefono, gasto FROM cliente where idClient = ?";
-	private final static String GETALL = "SELECT * FROM Cliente";
-
-
+	private final static String GETBYID = "SELECT idCliente, nombre, dni, telefono, gasto FROM cliente where idCliente = ?";
 	
-	private final static String SELECTCLIENTBYNAMEARTWORK="SELECT cliente.nombre,cliente.dni,cliente.teledono, cliente.gasto FROM cliente,obra WHERE cliente.idCliente=obra.idObra AND obra.nombre=?";
-
-
+	private final static String GETALL = "SELECT * FROM Cliente";
+	
+	private final static String SELECTCLIENTBYNAMEARTWORK="SELECT cliente.nombre,cliente.dni,cliente.telef	ono, cliente.gasto FROM cliente,obra WHERE cliente.idCliente=obra.idObra AND obra.nombre=?";
 	
 	private final static String UPDATECLIENTE = "INSERT INTO Cliente (idCliente, nombre, dni, telefono, gasto) VALUES (?,?,?,?,?) ON DUPLICATE KEY UPDATE nombre=?, dni =?, telefono=?, gasto=? ";
 	
@@ -127,12 +124,12 @@ public class ClientDAO extends Client implements IClientDAO {
 
 		//Nos devuelve a todos los clientes
 		@Override
-		public ObservableList<ClientDAO> obtenerCliente() {
+		public List<ClientDAO> obtenerCliente() {
 			// TODO Auto-generated method stub
 			Connection con=null;
 			Statement st=null;
 			ResultSet rs=null;
-			ObservableList<ClientDAO> listaClientes = FXCollections.observableArrayList();	
+			List<ClientDAO> listaClientes = FXCollections.observableArrayList();	
 			String sql="SELECT * FROM cliente";
 			con=Conexion.getInstance();
 			if(con!=null) {
@@ -145,6 +142,8 @@ public class ClientDAO extends Client implements IClientDAO {
 						this.dni=rs.getString(3);
 						this.telefono=rs.getInt(4);
 						this.gasto=rs.getDouble(5);
+						
+						this.misObras= ArtworkDAO.getObrasByClient(this.idClient);
 						
 						ClientDAO c = new ClientDAO(idClient, nombre, dni, telefono, gasto, misObras);
 						listaClientes.add(c);
@@ -189,37 +188,7 @@ public class ClientDAO extends Client implements IClientDAO {
 		         }
 		      }
 		      return rs;
-		}
-		
-		public int actualizarCliente() {
-
-		      int rs=0;
-		      Connection con = Conexion.getInstance();
-		   	
-		      if (con != null) {
-		         try {
-		            PreparedStatement q=con.prepareStatement(UPDATECLIENTE);
-		            q.setInt(1, this.idClient);
-		            q.setString(2, this.nombre);
-		            q.setString(3, this.dni);
-		            q.setInt(4, this.telefono);
-		            q.setDouble(5, this.gasto);
-		            q.setString(6, this.nombre);
-		            q.setString(7, this.dni);
-		            q.setInt(8, this.telefono);
-		            q.setDouble(9, this.gasto);
-		            
-		            rs =q.executeUpdate();
-		         	
-
-		         } catch (SQLException e) {
-		         	// TODO Auto-generated catch block
-		            e.printStackTrace();
-		         }
-		      }
-		      return rs;
-		}
-		
+		}	
 		
 		public int eliminar() {
 			int rs=0;
@@ -227,7 +196,6 @@ public class ClientDAO extends Client implements IClientDAO {
 	
 			if (con != null) {
 				try {
-					
 					PreparedStatement q=con.prepareStatement("DELETE FROM cliente WHERE IdCliente=?");
 					q.setInt(1, this.idClient);
 					rs =q.executeUpdate();
@@ -270,30 +238,7 @@ public class ClientDAO extends Client implements IClientDAO {
 			   	
 			      return result;
 			   }
-		   
-		   public Client getClientes() {
-			      Client result=new Client();
-			      Connection con = Conexion.getInstance();
-			      if (con != null) {
-			         try {
-			            PreparedStatement q=con.prepareStatement(GETALL);
-			            q.setInt(1, idClient);
-			            ResultSet rs=q.executeQuery();
-			            while(rs.next()) {
-			               result.setDni(rs.getString("nombre"));
-			               result.setNombre(rs.getString("dni"));
-			               result.setTelefono(rs.getInt("telefono"));
-			               result.setGasto(rs.getDouble("gasto"));
-			               
-			            }
-			         } catch (SQLException e) {
-			         	// TODO Auto-generated catch block
-			            e.printStackTrace();
-			         }
-			      }
-			   	
-			      return result;
-			   }
+
 		   
 		   public static List<ClientDAO> AllClients(){
 			   List<ClientDAO> clientes = new ArrayList<ClientDAO>();

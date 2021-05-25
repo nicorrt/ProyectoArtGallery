@@ -61,8 +61,8 @@ public class SecondMenuController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		ObservableList<ClientDAO> lista2 = modeloCliente.obtenerCliente();	
-		ObservableList<ArtworkDAO> lista = modeloObra.obtenerObraByIdObra();
+		ObservableList<ClientDAO> lista2 = (ObservableList<ClientDAO>) modeloCliente.obtenerCliente();	
+		ObservableList<ArtworkDAO> lista = (ObservableList<ArtworkDAO>) modeloObra.obtenerObraByIdObra();
 		comboBoxClient.getItems().addAll(lista2);
 		comboBoxClient.setConverter(new clientConverter());
 		
@@ -229,7 +229,7 @@ public class SecondMenuController implements Initializable{
 		@Override
 		public String toString(Client client) {
 			// TODO Auto-generated method stub
-			return client == null ? null :client.getNombre()+" "+client.getDni();
+			return client == null ? null :client.getNombre()+" "+client.getDni()+" "+client.getIdClient();
 		}
 
 		@Override
@@ -245,7 +245,7 @@ public class SecondMenuController implements Initializable{
 		@Override
 		public String toString(Artwork artwork) {
 			// TODO Auto-generated method stub
-			return artwork == null ? null :artwork.getNombre()+" "+artwork.getAutor();
+			return artwork == null ? null :artwork.getNombre()+" "+artwork.getAutor()+" "+artwork.getIdObra();
 
 		}
 

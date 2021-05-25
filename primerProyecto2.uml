@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_aUhX8LaAEeu-rM4jRGMVjg" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_aUhX8baAEeu-rM4jRGMVjg" source="codegen">
         <details xmi:id="_aUhX8raAEeu-rM4jRGMVjg" key="codegenDirectory" value="/primerProyecto/src/main/java"/>
-        <details xmi:id="_bSGagLaAEeu-rM4jRGMVjg" key="AssociatedSourceCode" value="/primerProyecto/src/main/java/com/anramirez/primerProyecto/App.java;2329543935/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/LoginController.java;2694652866/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/ObraController.java;309633360/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/SecondMenuController.java;4123833124/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/WindowArtworkController.java;942224237/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/WindowClientController.java;3643824804/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/ArtworkDAO.java;3964545011/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IArtwork.java;1684258053/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IArtworkDAO.java;3638173855/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IClient.java;3563890370/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IClientDAO.java;289505317/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/User.java;1356832343/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/UserDAO.java;52123658/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/utils/ConexionXML.java;120980225/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/utils/Validadores.java;1379060965/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/utils/Conexion.java;2231067845/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/ClientDAO.java;1242336856/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/Client.java;1491876805/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/Artwork.java;932065933/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/ClienteController.java;2132946399/1;"/>
+        <details xmi:id="_bSGagLaAEeu-rM4jRGMVjg" key="AssociatedSourceCode" value="/primerProyecto/src/main/java/com/anramirez/primerProyecto/App.java;2329543935/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/LoginController.java;2694652866/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/ObraController.java;309633360/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/SecondMenuController.java;4123833124/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/WindowArtworkController.java;942224237/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/WindowClientController.java;3643824804/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/ArtworkDAO.java;3964545011/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IArtwork.java;1684258053/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IArtworkDAO.java;3638173855/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IClient.java;3563890370/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/IClientDAO.java;289505317/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/User.java;1356832343/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/UserDAO.java;52123658/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/utils/ConexionXML.java;120980225/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/utils/Validadores.java;1379060965/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/utils/Conexion.java;2231067845/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/ClientDAO.java;1242336856/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/Client.java;1491876805/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/model/Artwork.java;932065933/1;/primerProyecto/src/main/java/com/anramirez/primerProyecto/ClienteController.java;1299758862/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_avxwkLaAEeu-rM4jRGMVjg">
@@ -3536,7 +3536,9 @@
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_bExJJbaAEeu-rM4jRGMVjg" name="getClient" specification="_aya04LaAEeu-rM4jRGMVjg">
-              <ownedParameter xmi:id="_bExJJraAEeu-rM4jRGMVjg" type="_axqm8LaAEeu-rM4jRGMVjg" direction="return"/>
+              <ownedParameter xmi:id="_bExJJraAEeu-rM4jRGMVjg" type="_axqm8LaAEeu-rM4jRGMVjg" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return cliente;&#xD;
  </body>
@@ -3608,6 +3610,13 @@
 		}&#xD;
 	</body>
             </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_C9NUcLaaEeu-rM4jRGMVjg" name="editNombre" specification="_C9H04LaaEeu-rM4jRGMVjg">
+              <ownedParameter xmi:id="_C9NUcbaaEeu-rM4jRGMVjg" name="event" type="_C9BHMLaaEeu-rM4jRGMVjg"/>
+              <language>java</language>
+              <body>ClientDAO c = new ClientDAO(event.getRowValue());&#xD;
+	      c.setNombre(event.getNewValue());&#xD;
+	   </body>
+            </ownedBehavior>
             <ownedOperation xmi:id="_aya04LaAEeu-rM4jRGMVjg" name="getClient" method="_bExJJbaAEeu-rM4jRGMVjg">
               <ownedParameter xmi:id="_bBl5ULaAEeu-rM4jRGMVjg" type="_axqm8LaAEeu-rM4jRGMVjg" direction="return"/>
             </ownedOperation>
@@ -3636,6 +3645,9 @@
             </ownedOperation>
             <ownedOperation xmi:id="_bDFuILaAEeu-rM4jRGMVjg" name="handleBack" method="_bExJK7aAEeu-rM4jRGMVjg">
               <ownedParameter xmi:id="_bDFuIbaAEeu-rM4jRGMVjg" name="event" type="_a_DisbaAEeu-rM4jRGMVjg"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_C9H04LaaEeu-rM4jRGMVjg" name="editNombre" visibility="private" method="_C9NUcLaaEeu-rM4jRGMVjg">
+              <ownedParameter xmi:id="_C9H04baaEeu-rM4jRGMVjg" name="event" type="_C9BHMLaaEeu-rM4jRGMVjg"/>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_bFBAwLaAEeu-rM4jRGMVjg" name="" memberEnd="_bFBAwbaAEeu-rM4jRGMVjg _bDNC4LaAEeu-rM4jRGMVjg">
@@ -3984,6 +3996,9 @@
           <packagedElement xmi:type="uml:Class" xmi:id="_bBS-YLaAEeu-rM4jRGMVjg" name="SAXException"/>
         </packagedElement>
       </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_C8MAwLaaEeu-rM4jRGMVjg" name="TableColumn">
+      <packagedElement xmi:type="uml:Class" xmi:id="_C9BHMLaaEeu-rM4jRGMVjg" name="CellEditEvent"/>
     </packagedElement>
     <profileApplication xmi:id="_aUh_ALaAEeu-rM4jRGMVjg">
       <eAnnotations xmi:id="_aUimELaAEeu-rM4jRGMVjg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -4650,4 +4665,10 @@
   <UMLLabProfile:Reference xmi:id="_bFmPkLaAEeu-rM4jRGMVjg" base_Element="_bFlog7aAEeu-rM4jRGMVjg"/>
   <UMLLabProfile:Reference xmi:id="_bFm2oLaAEeu-rM4jRGMVjg" base_Element="_bFmPkbaAEeu-rM4jRGMVjg"/>
   <UMLLabProfile:Reference xmi:id="_bFndsLaAEeu-rM4jRGMVjg" base_Element="_bFm2obaAEeu-rM4jRGMVjg"/>
+  <UMLLabProfile:Reference xmi:id="_C9BuQLaaEeu-rM4jRGMVjg" base_Element="_C9BHMLaaEeu-rM4jRGMVjg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_C9Ib8LaaEeu-rM4jRGMVjg" base_Element="_C9H04LaaEeu-rM4jRGMVjg"/>
+  <UMLLabProfile:Generics xmi:id="_C9JqELaaEeu-rM4jRGMVjg" genericsValue="Client, String" base_Element="_C9H04baaEeu-rM4jRGMVjg"/>
+  <UMLLabProfile:Annotations xmi:id="_C9KRILaaEeu-rM4jRGMVjg" base_Element="_C9H04LaaEeu-rM4jRGMVjg">
+    <annotations xmi:id="_C9KRIbaaEeu-rM4jRGMVjg" name="FXML"/>
+  </UMLLabProfile:Annotations>
 </xmi:XMI>

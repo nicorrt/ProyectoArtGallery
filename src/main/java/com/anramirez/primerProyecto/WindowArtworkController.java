@@ -79,7 +79,7 @@ public class WindowArtworkController implements Initializable{
 		    
 		    
 		    @FXML
-		    void insertarArtwork(ActionEvent event) {
+		    public void insertarArtwork(ActionEvent event) {
 		    	
 		    	String nombre = this.txtNombre.getText();
 		    	String autor = this.txtAutor.getText();
@@ -176,7 +176,7 @@ public class WindowArtworkController implements Initializable{
 			@Override
 			public void initialize(URL location, ResourceBundle resources) {
 				// TODO Auto-generated method stub
-				ObservableList<ClientDAO> lista2 = modeloCliente.obtenerCliente();	
+				ObservableList<ClientDAO> lista2 = (ObservableList<ClientDAO>) modeloCliente.obtenerCliente();	
 				
 				comboArtwork.getItems().addAll(lista2);
 				comboArtwork.setConverter(new clientConverter());

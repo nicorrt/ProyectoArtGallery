@@ -95,7 +95,7 @@ public class ClienteController implements Initializable{
 		clientes = FXCollections.observableArrayList();
 		filtroclientes = FXCollections.observableArrayList();
 	
-		ObservableList<ClientDAO> client = modeloCliente.obtenerCliente();
+		ObservableList<ClientDAO> client = (ObservableList<ClientDAO>) modeloCliente.obtenerCliente();
 
 		this.ColID.setCellValueFactory(new PropertyValueFactory("IdClient"));
 		this.ColNombre.setCellValueFactory(new PropertyValueFactory("Nombre"));

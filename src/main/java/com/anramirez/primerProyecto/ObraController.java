@@ -67,7 +67,7 @@ public class ObraController implements Initializable {
 	private Button botVolver;
 	
 	private ObservableList<ArtworkDAO> artworks;
-    private ObservableList<ArtworkDAO> filtroclientes;
+    private ObservableList<ArtworkDAO> filtroartworks;
     
     private final ArtworkDAO modeloArtwork = new ArtworkDAO();
     
@@ -80,11 +80,11 @@ public class ObraController implements Initializable {
 		//Se crea el observaList
 		artworks = FXCollections.observableArrayList();
 
-		filtroclientes = FXCollections.observableArrayList();
+		filtroartworks = FXCollections.observableArrayList();
 		/**ClientDAO c = new ClientDAO();
 		ObservableList<ClientDAO> variables = c.obtenerCliente();*/
 		
-		ObservableList<ArtworkDAO> artwork = modeloArtwork.obtenerObraByIdObra();
+		ObservableList<ArtworkDAO> artwork = (ObservableList<ArtworkDAO>) modeloArtwork.obtenerObraByIdObra();
 		//Se asignan las columnas a los atributos del modelo
 		
 		this.ColID.setCellValueFactory(new PropertyValueFactory("idObra"));
@@ -123,14 +123,14 @@ public class ObraController implements Initializable {
     	if(filtroNombre.isEmpty()) {
     		this.tablaObras.setItems(artworks);
     	}else {
-    		this.filtroclientes.clear();
+    		this.filtroartworks.clear();
     		
     		for(ArtworkDAO c:this.artworks) {
     			if(c.getNombre().toLowerCase().contains(filtroNombre.toLowerCase())) {
-    				this.filtroclientes.add(c);
+    				this.filtroartworks.add(c);
     			}
     		}
-    		this.tablaObras.setItems(filtroclientes);
+    		this.tablaObras.setItems(filtroartworks);
     	}
     }
 
@@ -157,7 +157,7 @@ public class ObraController implements Initializable {
     		Alert alert = new Alert(Alert.AlertType.ERROR);
     		alert.setHeaderText(null);
 			alert.setTitle("ERROR");
-			alert.setContentText("Debes seleccionar un cliente");
+			alert.setContentText("Debes seleccionar una obra");
 			alert.showAndWait();
     	}else {
     		ArtworkDAO cd = (ArtworkDAO) c;
@@ -167,7 +167,7 @@ public class ObraController implements Initializable {
     		Alert alert = new Alert(Alert.AlertType.INFORMATION);
     		alert.setHeaderText(null);
 			alert.setTitle("INFORMACION");
-			alert.setContentText("Se ha borrado el cliente");
+			alert.setContentText("Se ha borrado la obra");
 			alert.showAndWait();
 
     	}
@@ -180,7 +180,7 @@ public class ObraController implements Initializable {
 
     }
     
-    public Artwork getClient() {
+    public Artwork getArtork() {
     	return artwork;
     }
     
@@ -233,7 +233,7 @@ public class ObraController implements Initializable {
      		Alert alert = new Alert(Alert.AlertType.ERROR);
      		alert.setHeaderText(null);
  			alert.setTitle("ERROR");
- 			alert.setContentText("Debes seleccionar un cliente");
+ 			alert.setContentText("Debes seleccionar una obra");
  			alert.showAndWait();
      	}else {
      		

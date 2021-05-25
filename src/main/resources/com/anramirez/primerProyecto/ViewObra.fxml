@@ -13,8 +13,7 @@
       <Button fx:id="botAgregar" layoutX="58.0" layoutY="419.0" mnemonicParsing="false" onAction="#agregarArtwork" prefHeight="25.0" prefWidth="101.0" text="Agregar" />
       <Button fx:id="botModificar" layoutX="181.0" layoutY="419.0" mnemonicParsing="false" onAction="#modificarArtwork" prefHeight="25.0" prefWidth="101.0" text="Modificar" />
       <Button fx:id="botEliminar" layoutX="305.0" layoutY="419.0" mnemonicParsing="false" onAction="#eliminarArtwork" prefHeight="25.0" prefWidth="87.0" text="Eliminar" />
-      <TextField fx:id="barraBuscar" layoutX="58.0" layoutY="81.0" onAction="#buscarArtwork" prefHeight="25.0" prefWidth="219.0" />
-      <Button fx:id="botBuscar" layoutX="297.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Buscar" />
+      <TextField fx:id="barraBuscar" layoutX="219.0" layoutY="83.0" onKeyReleased="#buscarArtwork" prefHeight="25.0" prefWidth="219.0" />
       <Label layoutX="58.0" layoutY="30.0" prefHeight="41.0" prefWidth="321.0" text="Menú Obras de Arte">
          <font>
             <Font name="Berlin Sans FB Bold" size="30.0" />
@@ -30,5 +29,6 @@
             <TableColumn fx:id="ColPropietario" prefWidth="161.33328247070312" text="Propietario" />
          </columns>
       </TableView>
+      <TextField layoutX="58.0" layoutY="83.0" text="Buscar por nombre:" />
    </children>
 </AnchorPane>

@@ -48,8 +48,7 @@ public class Client {
 	public Client() {
 		this (-1, "", "", 0, 0.0, null);
 	}
-
-
+	
 	
 
 

@@ -20,12 +20,7 @@ import javafx.scene.image.Image;
 public class ArtworkDAO extends Artwork implements IArtworkDAO {
 	
 
-	private final static String GETBYIDCLIENTE = "SELECT * FROM obra WHERE idCliente = ?";
-
-
-
-	
-
+	private final static String GETBYIDCLIENTE = "SELECT * FROM obra, cliente WHERE cliente.idCliente = obra.idCliente AND obra.idCliente = ?";
 
 	private final static String ACTUALIZAROBRA = "UPDATE obra SET nombre = ?,artista = ?, precio = ?,idCliente=? WHERE idObra=?";
 
@@ -51,13 +46,13 @@ public class ArtworkDAO extends Artwork implements IArtworkDAO {
 
 	
 	@Override
-	public ObservableList<ArtworkDAO> obtenerObraByIdObra() {
+	public List<ArtworkDAO> obtenerObraByIdObra() {
 		// TODO Auto-generated method stub
 		Connection con=null;
 		Statement st=null;
 		ResultSet rs=null;
 		String sql="SELECT * FROM obra";
-		ObservableList<ArtworkDAO> listaObras = FXCollections.observableArrayList();	
+		List<ArtworkDAO> listaObras = FXCollections.observableArrayList();	
 				
 		con=Conexion.getInstance();
 		if(con!=null) {
@@ -70,7 +65,7 @@ public class ArtworkDAO extends Artwork implements IArtworkDAO {
 					this.autor=rs.getString(3);
 					this.precio=rs.getDouble(4);
 					//this.fotoBytes=rs.getByte(5);
-					this.miComprador=new ClientDAO(rs.getString(5));
+					this.miComprador=new ClientDAO(rs.getInt("idCliente"));
 
 					ArtworkDAO a = new ArtworkDAO(idObra, nombre, autor, precio, miComprador);
 					listaObras.add(a);
@@ -139,12 +134,12 @@ public class ArtworkDAO extends Artwork implements IArtworkDAO {
 	
 
 	@Override
-	public ObservableList<ArtworkDAO> obtenerObra() {
+	public List<ArtworkDAO> obtenerObra() {
 		// TODO Auto-generated method stub
 		Connection con=null;
 		Statement st=null;
 		ResultSet rs=null;
-		ObservableList<ArtworkDAO> listaObras = FXCollections.observableArrayList();	
+		List<ArtworkDAO> listaObras = FXCollections.observableArrayList();	
 		String sql="SELECT * FROM obra";
 		con=Conexion.getInstance();
 		if(con!=null) {

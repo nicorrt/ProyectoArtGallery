@@ -7,12 +7,11 @@ import javafx.collections.ObservableList;
 
 public interface IClientDAO {
 	
-	public boolean registrarCliente ();
-	public ObservableList<ClientDAO> obtenerCliente();
+	public boolean registrarCliente();
+	public List<ClientDAO> obtenerCliente();
 	int eliminar();
 	boolean eliminarClientePorId();
-	public int actualizarCliente();
+	public int actualizarCliente2();
 	ArrayList<Artwork> getMisobras();
-
 	
 }
